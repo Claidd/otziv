@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Otziv</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+<header th:insert="fragments/header :: header"></header>
+
+<!--Ввод нового отзыва-->
+<div class="container mt-5 mb-5">
+    <form>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Название компании</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Введите название компании">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Текст отзыва</label>
+            <input type="text" class="form-control" id="exampleInputPassword1"
+            placeholder="Введите текст отзыва">
+        </div>
+        <div class="mb-3 mt-3">
+            <select class="form-select form-select-lg mb-3 mt-3" aria-label="Default select example">
+                <option selected>Выберите категорию</option>
+                <option value="1">Салон красоты</option>
+                <option value="2">Кафе</option>
+                <option value="3">Бани и сауны</option>
+            </select>
+            <label for="customRange2" class="form-label  ml-5">Кол-во в месяц</label>
+            <input type="range" class="form-range col-4 " min="0" max="5" id="customRange2">
+        </div>
+
+<!--        <div class="mb-3 form-check">-->
+<!--            <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+<!--            <label class="form-check-label" for="exampleCheck1">Введите текст отзыва</label>-->
+<!--        </div>-->
+        <button type="submit" class="btn btn-primary">Отправить</button>
+    </form>
+</div>
+
+<!--Вывод всех отзывов-->
+<div class="container mt-5">
+    <div class="card" style="width: 18rem;">
+<!--        <img src="..." class="card-img-top" alt="...">-->
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
