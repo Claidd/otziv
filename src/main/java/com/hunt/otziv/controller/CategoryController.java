@@ -4,6 +4,7 @@ import com.hunt.otziv.services.CategoryService;
 import com.hunt.otziv.services.CompanyService;
 import com.hunt.otziv.services.ReviewService;
 import jakarta.validation.Valid;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -50,6 +51,7 @@ public class CategoryController {
         return "category_add";
     }
     /*Пост метод добавления новой категории в базу категорий*/
+
     @PostMapping ("/add")
     public String categoryAddPost(@RequestParam("new_category") String categoryTitle, Model model){
         System.out.println(categoryTitle);

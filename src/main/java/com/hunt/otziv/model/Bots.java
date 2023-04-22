@@ -37,5 +37,7 @@ public class Bots {
             inverseJoinColumns = @JoinColumn(name = "review_id"))
     private List<Review> reviewList;
 
-
+    @ManyToOne
+    @JoinColumn(name = "worker_id")
+    Worker worker;
 }

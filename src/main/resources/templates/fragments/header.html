@@ -1,8 +1,5 @@
 <div th:fragment="header">
 
-  <!doctype html>
-  <html lang="en" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-
   <!--Навигация-->
     <div class="container-fluid">
       <ul class="nav nav-pills nav-justified mt-3" >
@@ -20,26 +17,27 @@
         </li>
       </ul>
     </div>
+
+
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<!--  <a class="navbar-brand" href="#">Список покупок</a>-->
+
+<!--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"-->
+<!--          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--    <span class="navbar-toggler-icon"></span>-->
+<!--  </button>-->
+
+<!--  <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--    <ul class="navbar-nav mr-auto">-->
+<!--    </ul>-->
+
+<!--    <form sec:authorize="isAuthenticated()" class="form-inline my-2 my-lg-0" th:action="@{/logout}" method="post">-->
+<!--      <button class="btn btn-outline-success my-2 my-sm-0">Выйти</button>-->
+<!--    </form>-->
+
+<!--    <div sec:authorize="isAnonymous()" class="form-inline my-2 my-lg-0">-->
+<!--      <a class="btn btn-outline-success my-2 mr-2 my-sm-0" th:href="@{/login}">Логин</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
 </div>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Список покупок</a>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    </ul>
-
-    <form sec:authorize="isAuthenticated()" class="form-inline my-2 my-lg-0" th:action="@{/logout}" method="post">
-      <button class="btn btn-outline-success my-2 my-sm-0">Выйти</button>
-    </form>
-
-    <div sec:authorize="isAnonymous()" class="form-inline my-2 my-lg-0">
-      <a class="btn btn-outline-success my-2 mr-2 my-sm-0" th:href="@{/login}">Логин</a>
-    </div>
-  </div>
-</nav>

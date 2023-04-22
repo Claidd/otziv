@@ -41,6 +41,10 @@ public class Company {
     @OneToMany(mappedBy = "id")
     private List<Review> reviews;
 
+    @ManyToOne
+    @JoinColumn(name = "worker_id")
+    Worker worker;
+
 
 
 }

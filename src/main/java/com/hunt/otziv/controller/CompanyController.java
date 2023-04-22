@@ -5,10 +5,13 @@ import com.hunt.otziv.model.Category;
 import com.hunt.otziv.services.CategoryService;
 import com.hunt.otziv.services.CompanyService;
 import jakarta.validation.Valid;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import java.security.Principal;
 
 @Controller
 @RequestMapping("/company")
@@ -21,13 +24,14 @@ public class CompanyController {
         this.companyService = companyService;
         this.categoryService = categoryService;
     }
-
+    @PreAuthorize("hasAuthority('ADMIN')")
     // Метод вывода всех компаний и списка категорий.
     @GetMapping
-    public String companyAll(Model model){
+    public String companyAll(Model model, Principal principal){
         model.addAttribute("company", companyService.findAll());
         model.addAttribute("category", categoryService.categoryAll());
         model.addAttribute("newCompany", new CompanyDto());
+        System.out.println(principal.getName());
         return "company";
     }
 
